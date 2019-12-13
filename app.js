@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-var items = ['buy food', 'cook food', 'eat food'];
+let items = ['buy food', 'cook food', 'eat food'];
 
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(express.static('public'))
 
 app.get('/', function(req, res){
 var today = new Date();
